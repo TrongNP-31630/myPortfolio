@@ -36,12 +36,21 @@ if (window.isSecureContext && navigator.clipboard && navigator.clipboard.writeTe
   copyButton.addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText('trongnp.work@gmail.com');
-      toast.textContent = 'Đã sao chép địa chỉ email.';
+      toast.textContent = document.documentElement.lang === 'en' ? 'Email address copied.' : 'Đã sao chép địa chỉ email.';
     } catch {
-      toast.textContent = 'Chưa sao chép được. Bạn có thể chọn trực tiếp địa chỉ email.';
+      toast.textContent = document.documentElement.lang === 'en' ? 'Could not copy. Please select the email address directly.' : 'Chưa sao chép được. Bạn có thể chọn trực tiếp địa chỉ email.';
     }
     toast.classList.add('visible');
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => toast.classList.remove('visible'), 3500);
   });
+}
+
+// Keep the current section when changing language; static links also work without JS.
+const languageSwitch = document.querySelector('.language-toggle');
+if (languageSwitch) {
+  const languagePage = languageSwitch.getAttribute('href').split('#')[0];
+  const syncLanguageAnchor = () => languageSwitch.setAttribute('href', languagePage + window.location.hash);
+  syncLanguageAnchor();
+  window.addEventListener('hashchange', syncLanguageAnchor);
 }

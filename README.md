@@ -60,3 +60,10 @@ Phần đóng góp cá nhân được cập nhật theo mã GameLogic do tác gi
 
 Các mốc do tác giả cung cấp: đội tuyển học sinh giỏi Tin học 2022–2024; thi học bổng FPT đạt 30% tháng 04/2024; Khuyến khích FAlgo tháng 09/2025; đội The Boys thi ICPC miền Nam và toàn quốc trong 10–11/2025; đội Za Lizardo tiếp tục thi ICPC miền Nam và toàn quốc trong 10–11/2026. Các khoảng tháng được cập nhật theo xác nhận của tác giả.
 
+
+## Ngôn ngữ
+
+- `index.html`: bản tiếng Việt.
+- `index.en.html`: bản tiếng Anh đầy đủ.
+- Nút EN/VI trên navbar chuyển ngôn ngữ và giữ mục đang xem. Hai bản dùng chung CSS, JavaScript và tài nguyên.
+- Khi chỉnh nội dung, cập nhật cả hai file HTML. Khi triển khai, nhớ đưa `index.en.html` lên cùng các file còn lại.
